@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
+import Productos from './components/Productos';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    productos: [
+      { name: 'Tomate', price: 1500, img: '/productos/tomate.jpg' },
+      { name: 'Arberja', price: 2500, img: '/productos/arbejas.jpg' },
+      { name: 'Lechuga', price: 500, img: '/productos/lechuga.jpg' },
+    ]
+  }
+  render() {
+    return (
+      <div >
+        <Productos
+          agregarAlCarro={()=> console.log('No hace nada')}
+          productos={this.state.productos}
+        />
+        <p>Hola Mundo</p>
+      </div>
+    );
+  }
 }
 
 export default App;
