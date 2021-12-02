@@ -10,7 +10,7 @@ const styles = {
         borderRadius: '15px',
         cursor: 'pointer',
     },
-    bubble:{
+    bubble: {
         position: 'relative',
         left: 12,
         top: 20
@@ -19,10 +19,12 @@ const styles = {
 
 class Carro extends Component {
     render() {
+        const { carro } = this.props
+        const cantidad = carro.reduce((acc, el) => acc + el.cantidad, 0)
         return (
             <div>
                 <span style={styles.bubble}>
-                    <BubbleAlert value={10} />
+                    {cantidad !== 0 && <BubbleAlert value={cantidad} />}
                 </span>
                 <button style={styles.carro}>
                     Carro

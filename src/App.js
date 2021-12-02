@@ -37,11 +37,11 @@ class App extends Component {
     console.log(this.state.carro);
     return (
       <div >
-        <Navbar />
+        <Navbar carro={this.state.carro} />
         <Layout>
           <Title />
           <Productos
-            agregarAlCarro={this.agregarAlCarro }
+            agregarAlCarro={this.agregarAlCarro}
             productos={this.state.productos}
           />
         </Layout>
